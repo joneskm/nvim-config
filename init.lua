@@ -35,3 +35,46 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+local lspconfig = require('lspconfig')
+lspconfig.asm_lsp.setup({
+    cmd = { "asm-lsp" },  -- Make sure the asm-lsp binary is in your PATH
+    filetypes = { "asm", "nasm", "masm", "gas" },  -- File types for which the server should be enabled
+   root_dir = function(fname)
+        return require('lspconfig.util').root_pattern(".asm-lsp-root", ".git", "Makefile")(fname)
+            or require('lspconfig.util').path.dirname(fname)
+    end,
+    settings = {
+        asm = {
+            -- Add any specific settings for asm-lsp here
+        }
+    }
+})
+
+lspconfig.rust_analyzer.setup({
+  settings = {
+    ["rust-analyzer"] = {
+      assist = { importGranularity = "module", importPrefix = "by_self" },
+      cargo = { loadOutDirsFromCheck = true },
+      procMacro = { enable = true },
+    }
+  },
+    on_attach = function(client, bufnr)
+    -- Enable format on save if the server supports formatting
+    if client.server_capabilities.documentFormattingProvider then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = vim.api.nvim_create_augroup("LspFormat", { clear = true }),
+        buffer = bufnr,
+        callback = function()
+          -- Trigger formatting
+         
+          vim.lsp.buf.format({ async = false })  -- Synchronous formatting
+          -- vim.lsp.buf.formatting_sync(nil, 1000)
+        end,
+      })
+    end
+  end,
+
+})
+
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
