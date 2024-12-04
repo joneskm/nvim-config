@@ -79,7 +79,7 @@ lspconfig.asm_lsp.setup({
 --
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 
--- Add inly hints when LSP attaches
+-- Add inlay hints when LSP attaches (for all languages)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -87,6 +87,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client.server_capabilities.inlayHintProvider then
       vim.lsp.inlay_hint.enable(true)
     end
+  end,
+})
+
+-- Auto format rust files on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.rs", -- Match Rust files
+  callback = function()
+    vim.lsp.buf.format({
+--      timeout_ms = 2000, -- Optional: Timeout for formatting
+      async = false,    -- Synchronous formatting
+    })
   end,
 })
 
