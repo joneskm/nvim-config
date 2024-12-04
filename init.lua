@@ -101,7 +101,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-
+-- Set key binding for go to definition
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
 
 
 
