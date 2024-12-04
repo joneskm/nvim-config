@@ -51,30 +51,65 @@ lspconfig.asm_lsp.setup({
     }
 })
 
-lspconfig.rust_analyzer.setup({
-  settings = {
-    ["rust-analyzer"] = {
-      assist = { importGranularity = "module", importPrefix = "by_self" },
-      cargo = { loadOutDirsFromCheck = true },
-      procMacro = { enable = true },
-    }
-  },
-    on_attach = function(client, bufnr)
-    -- Enable format on save if the server supports formatting
-    if client.server_capabilities.documentFormattingProvider then
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("LspFormat", { clear = true }),
-        buffer = bufnr,
-        callback = function()
-          -- Trigger formatting
-         
-          vim.lsp.buf.format({ async = false })  -- Synchronous formatting
-          -- vim.lsp.buf.formatting_sync(nil, 1000)
-        end,
-      })
+-- lspconfig.rust_analyzer.setup({
+--   settings = {
+--     ["rust-analyzer"] = {
+--       assist = { importGranularity = "module", importPrefix = "by_self" },
+--       cargo = { loadOutDirsFromCheck = true },
+--       procMacro = { enable = true },
+--     }
+--   },
+--     on_attach = function(client, bufnr)
+--     -- Enable format on save if the server supports formatting
+--     if client.server_capabilities.documentFormattingProvider then
+--       vim.api.nvim_create_autocmd("BufWritePre", {
+--         group = vim.api.nvim_create_augroup("LspFormat", { clear = true }),
+--         buffer = bufnr,
+--         callback = function()
+--           -- Trigger formatting
+--
+--           vim.lsp.buf.format({ async = false })  -- Synchronous formatting
+--           -- vim.lsp.buf.formatting_sync(nil, 1000)
+--         end,
+--       })
+--     end
+--   end,
+--
+-- })
+--
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+
+-- Add inly hints when LSP attaches
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local bufnr = args.buf
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true)
     end
   end,
-
 })
 
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

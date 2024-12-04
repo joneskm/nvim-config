@@ -25,38 +25,14 @@ return {
     },
   },
 
-  {
-    "simrat39/rust-tools.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig", -- Required for LSP
-    },
-    ft = { "rust" }, -- Load when editing Rust files
-    config = function()
-      require("rust-tools").setup({
-        tools = { -- rust-tools settings
-          inlay_hints = {
-            auto = true, -- Automatically enable inlay hints
-            show_parameter_hints = true, -- Show hints for function parameters
-            parameter_hints_prefix = "<- ",
-            other_hints_prefix = "=> ",
-          },
-        },
-        server = { -- rust-analyzer LSP settings
-          on_attach = function(_, bufnr)
-            -- Add key mappings or other on_attach settings
-            local opts = { buffer = bufnr }
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-          end,
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = { allFeatures = true },
-              checkOnSave = { command = "clippy" },
-            },
-          },
-        },
-      })
-    end,
-  },
+{
+  'mrcjkb/rustaceanvim',
+  version = '^5', -- Recommended
+  lazy = false, -- This plugin is already lazy
 }
 
 
+
+
+
+}
