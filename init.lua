@@ -79,6 +79,10 @@ lspconfig.asm_lsp.setup({
 --
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 
+vim.keymap.set("n", "<leader>a", function()
+    vim.lsp.buf.code_action()
+end, { desc = "Show quick fixes (code actions)" })
+
 -- Add inlay hints when LSP attaches (for all languages)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
