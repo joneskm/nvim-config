@@ -109,6 +109,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
 
 
+vim.opt.spell = true
+vim.opt.spelllang = { "en" }  -- Set to your desired language(s)
 
 
 

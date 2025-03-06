@@ -10,7 +10,7 @@
 
 # Cheatsheet
 
-This is not meant to be comprehensive, it's useful ones which I tend to forget!
+This is not meant to be comprehensive, it's list of useful ones which I tend to forget!
 
 1. Switch tab right/left: <Tab> <S-Tab>
 2. Toggle between sidebar and tabs: <C-w>w
@@ -22,3 +22,10 @@ This is not meant to be comprehensive, it's useful ones which I tend to forget!
 8. Show diagnostic: <leader> d
 9. Show code actions: <leader> a
 10. Jump to end/start of line in insert mode: <C-e> <C-o>0
+11. Find all references (opens a quickfix list): gr;
+12. Go to next/previous item in (quickfix) list: :cn :cp
+13. Spelling suggestions: z=
+14. Jump to next/previous misspelled word: ]s [s
+15. Comment/Uncomment code (after selecting): <leader>/
+
+TODO: how to create/delete/rename a file
