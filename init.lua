@@ -113,6 +113,11 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en" }  -- Set to your desired language(s)
 
 
+require("gitline").show_commit_info()
+
+vim.api.nvim_create_user_command("GitHubLink", function()
+  require("gitline").get_github_permalink()
+end, {})
 
 
 

@@ -34,4 +34,4 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 20. Next previous word: n N
 21. Ignore/No ignore case: set:ignorecase set:noignorecase
 22. Centre/top/bottom the cursor on the screen: zz zt zb
-
+23. Get github permalink: :GitHubLink
