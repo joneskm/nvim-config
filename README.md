@@ -30,7 +30,7 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 16. Rename/delete/add a file: r d a
 17. Move to start/end of document: gg G
 18. Word search: /word
-19. Word under the cursor: *
+19. Search for word under the cursor: *
 20. Next previous word: n N
 21. Ignore/No ignore case: set:ignorecase set:noignorecase
 22. Centre/top/bottom the cursor on the screen: zz zt zb
