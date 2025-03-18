@@ -35,3 +35,6 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 21. Ignore/No ignore case: set:ignorecase set:noignorecase
 22. Centre/top/bottom the cursor on the screen: zz zt zb
 23. Get github permalink: :GitHubLink
+24. Move cursor to the top/bottom: H L
+25. Open a file for editing: :e filename
+26. Expand/shrink file explorer: <C-Right <C-Left>> 
