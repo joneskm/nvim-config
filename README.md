@@ -38,3 +38,6 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 24. Move cursor to the top/bottom: H L
 25. Open a file for editing: :e filename
 26. Expand/shrink file explorer: <C-Right <C-Left>> 
+27. Copy full path of the current buffer to the system clipboard: <leader> cp
+
+

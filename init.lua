@@ -119,8 +119,17 @@ vim.api.nvim_create_user_command("GitHubLink", function()
   require("gitline").get_github_permalink()
 end, {})
 
+vim.api.nvim_create_user_command("CopyFilePath", function()
+  local path = vim.api.nvim_buf_get_name(0)
+  if path == "" then
+    print("No file path (maybe an empty buffer?)")
+    return
+  end
+  vim.fn.setreg('+', path)  -- copy to system clipboard
+  print("Copied to clipboard: " .. path)
+end, {})
 
-
+vim.keymap.set("n", "<leader>cp", "<cmd>CopyFilePath<CR>", { desc = "Copy file path to clipboard" })
 
 
 
