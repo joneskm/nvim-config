@@ -61,7 +61,7 @@ M.get_github_permalink = function()
 end
 
 -- Auto-update when moving the cursor
-vim.api.nvim_create_autocmd({"CursorMoved", "CursorHold"}, {
+vim.api.nvim_create_autocmd({ "CursorHold"}, {
   callback = function()
     M.show_commit_info()
   end,
