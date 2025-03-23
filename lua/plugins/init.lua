@@ -17,6 +17,10 @@ return {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
   		ensure_installed = {
+      "go",
+      "gomod",
+      "gowork",
+      "gotmpl",
   			"vim", "lua", "vimdoc",
        "html", "markdown", "rust", "css"
   		},
