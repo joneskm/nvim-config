@@ -33,7 +33,7 @@ M.get_blame = function(filename, line)
     local blame_info = M.run_cmd(cmd)
 
     if blame_info then
-        local commit_hash = blame_info:match("^(%w+)") -- Extract commit hash
+        local commit_hash = blame_info:match("^%^?(%w+)") -- Extract commit hash
         local commit_info = blame_info:match("%((.-)%s%d+%)") -- Extract author & date
 
         --local commit_hash = blame_info:match("^%w+")
