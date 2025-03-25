@@ -94,7 +94,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Auto format rust files on save
+-- Auto format files on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.rs", "*.lua" },
   callback = function()
@@ -105,19 +105,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
+-- Auto format golang files on save - we use goimports rather than gopls because it fixes imports at the same time
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-    -- organize imports
-    vim.lsp.buf.code_action({
-      context = {
-        only = { "source.organizeImports" },
-        diagnostics = {}, -- <- this is required
-      },
-      apply = true,
-    })
-    -- then format
-    vim.lsp.buf.format({ async = false })
+    -- Run goimports and write the file manually
+    vim.cmd("silent! !goimports -w %")
+    -- Reload the buffer to reflect the new changes
+    vim.cmd("edit!")
   end,
 })
 
