@@ -106,7 +106,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Auto format golang files on save - we use goimports rather than gopls because it fixes imports at the same time
-vim.api.nvim_create_autocmd("BufWritePre", {
+-- Notice: this is done post save since the file must be written to disk before calling goimports
+vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.go",
   callback = function()
     -- Run goimports and write the file manually
