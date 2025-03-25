@@ -105,6 +105,22 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    -- organize imports
+    vim.lsp.buf.code_action({
+      context = {
+        only = { "source.organizeImports" },
+      diagnostics = {}, -- <- this is required
+  },
+  apply = true,
+})
+    -- then format
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
 -- Set key binding for go to definition
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
 

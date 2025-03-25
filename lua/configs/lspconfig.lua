@@ -29,8 +29,11 @@ lspconfig.gopls.setup {
   root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
+      gofumpt = true,
+      usePlaceholders = true,
       analyses = {
         unusedparams = true,
+        nilness = true,
         shadow = true,
       },
       staticcheck = true,
