@@ -38,17 +38,17 @@ end)
 
 local lspconfig = require('lspconfig')
 lspconfig.asm_lsp.setup({
-    cmd = { "asm-lsp" },  -- Make sure the asm-lsp binary is in your PATH
-    filetypes = { "asm", "nasm", "masm", "gas" },  -- File types for which the server should be enabled
-   root_dir = function(fname)
-        return require('lspconfig.util').root_pattern(".asm-lsp-root", ".git", "Makefile")(fname)
-            or require('lspconfig.util').path.dirname(fname)
-    end,
-    settings = {
-        asm = {
-            -- Add any specific settings for asm-lsp here
-        }
+  cmd = { "asm-lsp" },                          -- Make sure the asm-lsp binary is in your PATH
+  filetypes = { "asm", "nasm", "masm", "gas" }, -- File types for which the server should be enabled
+  root_dir = function(fname)
+    return require('lspconfig.util').root_pattern(".asm-lsp-root", ".git", "Makefile")(fname)
+        or require('lspconfig.util').path.dirname(fname)
+  end,
+  settings = {
+    asm = {
+      -- Add any specific settings for asm-lsp here
     }
+  }
 })
 
 -- lspconfig.rust_analyzer.setup({
@@ -80,7 +80,7 @@ lspconfig.asm_lsp.setup({
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 
 vim.keymap.set("n", "<leader>a", function()
-    vim.lsp.buf.code_action()
+  vim.lsp.buf.code_action()
 end, { desc = "Show quick fixes (code actions)" })
 
 -- Add inlay hints when LSP attaches (for all languages)
@@ -99,8 +99,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.rs", "*.lua" },
   callback = function()
     vim.lsp.buf.format({
---      timeout_ms = 2000, -- Optional: Timeout for formatting
-      async = false,    -- Synchronous formatting
+      --      timeout_ms = 2000, -- Optional: Timeout for formatting
+      async = false, -- Synchronous formatting
     })
   end,
 })
@@ -112,10 +112,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.code_action({
       context = {
         only = { "source.organizeImports" },
-      diagnostics = {}, -- <- this is required
-  },
-  apply = true,
-})
+        diagnostics = {}, -- <- this is required
+      },
+      apply = true,
+    })
     -- then format
     vim.lsp.buf.format({ async = false })
   end,
@@ -126,7 +126,7 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = tru
 
 
 vim.opt.spell = true
-vim.opt.spelllang = { "en" }  -- Set to your desired language(s)
+vim.opt.spelllang = { "en" } -- Set to your desired language(s)
 
 
 require("gitline").show_commit_info()
@@ -141,23 +141,8 @@ vim.api.nvim_create_user_command("CopyFilePath", function()
     print("No file path (maybe an empty buffer?)")
     return
   end
-  vim.fn.setreg('+', path)  -- copy to system clipboard
+  vim.fn.setreg('+', path) -- copy to system clipboard
   print("Copied to clipboard: " .. path)
 end, {})
 
 vim.keymap.set("n", "<leader>cp", "<cmd>CopyFilePath<CR>", { desc = "Copy file path to clipboard" })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

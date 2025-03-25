@@ -14,34 +14,34 @@ return {
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-      "go",
-      "gomod",
-      "gowork",
-      "gotmpl",
-  			"vim", "lua", "vimdoc",
-       "html", "markdown", "rust", "css"
-  		},
-      highlight = { enable = true 
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "go",
+        "gomod",
+        "gowork",
+        "gotmpl",
+        "vim", "lua", "vimdoc",
+        "html", "markdown", "rust", "css"
+      },
+      highlight = { enable = true
       }
     },
   },
 
-{
-  'mrcjkb/rustaceanvim',
-  version = '^5', -- Recommended
-  lazy = false, -- This plugin is already lazy
-},
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^5', -- Recommended
+    lazy = false,   -- This plugin is already lazy
+  },
 
-{
+  {
     "rmagatti/auto-session",
-    lazy=false,
+    lazy = false,
     config = function()
-        require("configs.auto_session")
+      require("configs.auto_session")
     end,
-},
+  },
 
 
 
