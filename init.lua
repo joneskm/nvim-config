@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Auto format rust files on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.rs", -- Match Rust files
+  pattern = { "*.rs", "*.lua" },
   callback = function()
     vim.lsp.buf.format({
 --      timeout_ms = 2000, -- Optional: Timeout for formatting
