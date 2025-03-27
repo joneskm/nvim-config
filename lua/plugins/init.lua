@@ -43,6 +43,10 @@ return {
     end,
   },
 
+  {
+    "nathangrigg/vim-beancount",
+    ft = "beancount"
+  }
 
 
 }

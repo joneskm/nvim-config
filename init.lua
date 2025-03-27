@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Auto format files on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.rs", "*.lua" },
+  pattern = { "*.rs", "*.lua", "*.beancount" },
   callback = function()
     vim.lsp.buf.format({ async = false })
 
@@ -143,3 +143,16 @@ vim.api.nvim_create_user_command("CopyFilePath", function()
 end, {})
 
 vim.keymap.set("n", "<leader>cp", "<cmd>CopyFilePath<CR>", { desc = "Copy file path to clipboard" })
+
+-- Open beancount files unfolded
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "beancount",
+  callback = function()
+    vim.wo.foldenable = false
+  end,
+})
+
+-- Setup beancount LSP
+require("lspconfig").beancount.setup({
+  -- optional overrides here
+})
