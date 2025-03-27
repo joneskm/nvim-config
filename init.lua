@@ -98,10 +98,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.rs", "*.lua" },
   callback = function()
-    vim.lsp.buf.format({
-      --      timeout_ms = 2000, -- Optional: Timeout for formatting
-      async = false, -- Synchronous formatting
-    })
+    vim.lsp.buf.format({ async = false })
+
+    -- Redraw existing diagnostics from all namespaces
+    vim.diagnostic.hide(nil, 0)
+    vim.diagnostic.show(nil, 0)
   end,
 })
 
