@@ -29,15 +29,20 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 15. Comment/Uncomment code (after selecting): <leader>/
 16. Rename/delete/add a file: r d a
 17. Move to start/end of document: gg G
-18. Word search: /word
-19. Search for word under the cursor: *
-20. Next previous word: n N
-21. Ignore/No ignore case: set:ignorecase set:noignorecase
-22. Centre/top/bottom the cursor on the screen: zz zt zb
-23. Get github permalink: :GitHubLink
-24. Move cursor to the top/bottom: H L
-25. Open a file for editing: :e filename
-26. Expand/shrink file explorer: <C-Right <C-Left>> 
-27. Copy full path of the current buffer to the system clipboard: <leader> cp
-
-
+18. Word search (this will interpret word as a regex): /word
+19. Word search literal: /\Vword 
+20. Search for word under the cursor: *
+21. Next previous word: n N
+22. Ignore/No ignore case: set:ignorecase set:noignorecase
+23. Centre/top/bottom the cursor on the screen: zz zt zb
+24. Get github permalink: :GitHubLink
+25. Move cursor to the top/bottom: H L
+26. Open a file for editing: :e filename
+27. Expand/shrink file explorer: <C-Right <C-Left>> 
+28. Copy full path of the current buffer to the system clipboard: <leader> cp
+29. Find and replace all matches on the current line: :s/foo/bar/g
+30. Find and replace all matches in the file: :%s/foo/bar/g
+31. Find and replace all matches in the file with confirmation: :%s/foo/bar/gc
+32. Jump to line x: :x
+33. Go the next/previous diagnsotic: ]d [d
+34. Hover (e.g. show documentation): K 
