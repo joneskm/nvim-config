@@ -11,6 +11,7 @@
 # Cheatsheet
 
 This is not meant to be comprehensive, it's list of useful ones which I tend to forget!
+NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999`, which keeps the cursor centred e.g. `zz`
 
 1. Switch tab right/left: <Tab> <S-Tab>
 2. Toggle between sidebar and tabs: <C-w>w
@@ -27,7 +28,7 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 13. Spelling suggestions: z=
 14. Jump to next/previous misspelled word: ]s [s
 15. Comment/Uncomment code (after selecting): <leader>/
-16. Rename/delete/add a file: r d a
+16. Rename/delete/add a file or directory: r d a (add a trailing slash to create a directory e.g. src/)
 17. Move to start/end of document: gg G
 18. Word search (this will interpret word as a regex): /word
 19. Word search literal: /\Vword 
@@ -46,3 +47,8 @@ This is not meant to be comprehensive, it's list of useful ones which I tend to 
 32. Jump to line x: :x
 33. Go the next/previous diagnsotic: ]d [d
 34. Hover (e.g. show documentation): K 
+35. Jump to last insert exit: <leader> i
+36. Rename a symbol: <leader> rn
+37. Set a mark named g: mg
+38. Jump to mark g (<backtick> shows all marks): <backtick>g
+39. Jump to last edit: <backtick>.

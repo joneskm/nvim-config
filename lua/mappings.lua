@@ -17,3 +17,4 @@ map("i", "jk", "<ESC>")
 local opts = { noremap = true, silent = true }
 map("n", "<C-Right>", ":vertical resize +1<CR>", opts) -- Increase width
 map("n", "<C-Left>", ":vertical resize -1<CR>", opts)  -- Decrease width
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })

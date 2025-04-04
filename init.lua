@@ -156,3 +156,6 @@ vim.api.nvim_create_autocmd("FileType", {
 require("lspconfig").beancount.setup({
   -- optional overrides here
 })
+
+vim.opt.scrolloff = 999
+vim.keymap.set("n", "<leader>i", "`^i", { desc = "Jump to last insert exit" })
