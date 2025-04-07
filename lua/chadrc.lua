@@ -51,9 +51,10 @@ M.ui = {
   statusline = {
     enabled = true,
     modules = {
-      -- A modification of the ui plugin to include the percentage into the file, original:
+      -- A modification of the ui plugin to include the percentage into the file
+      -- and the total number of lines, original:
       -- https://github.com/NvChad/ui/blob/27f449be42b360cbb9f133aa8853017d277f0c49/lua/nvchad/stl/default.lua#L54
-      cursor = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon# %#St_pos_text# %l/%v %p %%",
+      cursor = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon# %#St_pos_text# %l/%L %v %p %%",
 
       --- A modification of the ui plugin to include the file path, original:
       --- https://github.com/NvChad/ui/blob/27f449be42b360cbb9f133aa8853017d277f0c49/lua/nvchad/stl/default.lua#L27-L31
