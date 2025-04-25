@@ -23,7 +23,7 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 8. Show diagnostic: <leader> d
 9. Show code actions: <leader> a
 10. Jump to end/start of line in insert mode: <C-e> <C-o>0
-11. Find all references (opens a quickfix list): gr;
+11. Find all references (opens a quickfix list): grr
 12. Go to next/previous item in (quickfix) list: :cn :cp
 13. Spelling suggestions: z=
 14. Jump to next/previous misspelled word: ]s [s
@@ -52,3 +52,8 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 37. Set a mark named g: mg
 38. Jump to mark g (<backtick> shows all marks): <backtick>g
 39. Jump to last edit: <backtick>.
+40. Close the popup menu: <C-e>
+41. Collapse all in neo tree: z
+42. Delete/yank symbol under cursor: diw yiw
+43. Set text width: :set textwidth=100
+44. Reflow paragraph: gqap
