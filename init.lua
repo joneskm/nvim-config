@@ -159,3 +159,11 @@ require("lspconfig").beancount.setup({
 
 vim.opt.scrolloff = 999
 vim.keymap.set("n", "<leader>i", "`^i", { desc = "Jump to last insert exit" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.textwidth = 100
+    vim.opt_local.formatoptions:append("t")
+  end,
+})
