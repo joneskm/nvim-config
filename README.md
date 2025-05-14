@@ -57,3 +57,5 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 42. Delete/yank symbol under cursor: diw yiw
 43. Set text width: :set textwidth=100
 44. Reflow paragraph: gqap
+45. Reflow selection: gq
+46. Jump to column 50: 50|
