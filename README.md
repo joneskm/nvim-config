@@ -54,8 +54,9 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 39. Jump to last edit: <backtick>.
 40. Close the popup menu: <C-e>
 41. Collapse all in neo tree: z
-42. Delete/yank symbol under cursor: diw yiw
-43. Set text width: :set textwidth=100
-44. Reflow paragraph: gqap
-45. Reflow selection: gq
-46. Jump to column 50: 50|
+42. Delete/yank/select symbol under cursor: diw di{ yiw yi{ viw vi{
+43. Enter visual line mode: V 
+44. Set text width: :set textwidth=100
+45. Reflow paragraph: gqap
+46. Reflow selection: gq
+47. Jump to column 50: 50|
