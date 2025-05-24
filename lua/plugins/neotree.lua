@@ -8,6 +8,19 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    git_status = {
+      symbols = {
+        added     = "✚",
+        modified  = "",
+        deleted   = "✖",
+        renamed   = "➜",
+        untracked = "",
+        ignored   = "◌",
+        unstaged  = "󰄱",
+        staged    = "✓",
+        conflict  = "",
+      },
+    },
     sources = { "filesystem", "buffers", "git_status" },
     filesystem = {
       bind_to_cwd = true,
