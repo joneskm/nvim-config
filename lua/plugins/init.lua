@@ -54,6 +54,7 @@ return {
     config = function()
       local conf = {
         -- For customization, refer to Install > Configuration in the Documentation/Readme
+        openai_api_key = { "cat", vim.fn.expand("~/.config/openai_key") },
       }
       require("gp").setup(conf)
 
