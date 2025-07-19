@@ -55,6 +55,16 @@ return {
       local conf = {
         -- For customization, refer to Install > Configuration in the Documentation/Readme
         openai_api_key = { "cat", vim.fn.expand("~/.config/openai_key") },
+        agents = {
+          {
+            name = "ChatGPT-o3-mini",
+            disable = true,
+          },
+          {
+            name = "CodeGPT-o3-mini",
+            disable = true,
+          }
+        },
       }
       require("gp").setup(conf)
 

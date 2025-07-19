@@ -61,3 +61,6 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 46. Reflow selection: gq
 47. Jump to column 50: 50|
 48. Use AI to suggest a cleanup, select text then: :GpAppend cleanup
+49. View current model (this will start a new chat, the model will be shown in the to LH corner): GpChatNew
+50. Show available models (update the config to disable them): :lua print(vim.inspect(require("gp").agents))
+51. Get list of previous commands (useful for example copying to clipboard): q:
