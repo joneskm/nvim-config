@@ -60,3 +60,4 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 45. Reflow paragraph: gqap
 46. Reflow selection: gq
 47. Jump to column 50: 50|
+48. Use AI to suggest a cleanup, select text then: :GpAppend cleanup
