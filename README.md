@@ -54,13 +54,15 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 39. Jump to last edit: <backtick>.
 40. Close the popup menu: <C-e>
 41. Collapse all in neo tree: z
-42. Delete/yank/select symbol under cursor: diw di{ yiw yi{ viw vi{
-43. Enter visual line mode: V 
-44. Set text width: :set textwidth=100
-45. Reflow paragraph: gqap
-46. Reflow selection: gq
-47. Jump to column 50: 50|
-48. Use AI to suggest a cleanup, select text then: :GpAppend cleanup
-49. View current model (this will start a new chat, the model will be shown in the to LH corner): GpChatNew
-50. Show available models (update the config to disable them): :lua print(vim.inspect(require("gp").agents))
-51. Get list of previous commands (useful for example copying to clipboard): q:
+42. Delete/yank/select inside object: diw di{ dip yiw yi{ yip viw vi{ vip
+43. Delete/yank/select around object: daw da{ dap yaw ya{ yap vaw va{ vap
+44. Delete/yank/select to end of file: dG yG vG
+45. Enter visual line mode: V 
+46. Set text width: :set textwidth=100
+47. Reflow/format around paragraph/inside/end of file/end of paragraph: gqap gqip gqG gq}
+48. Reflow selection: gq
+49. Jump to column 50: 50|
+50. Use AI to suggest a cleanup, select text then: :GpAppend cleanup
+51. View current model (this will start a new chat, the model will be shown in the to LH corner): GpChatNew
+52. Show available models (update the config to disable them): :lua print(vim.inspect(require("gp").agents))
+53. Get list of previous commands (useful for example copying to clipboard): q:
