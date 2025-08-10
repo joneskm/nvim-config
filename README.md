@@ -54,8 +54,8 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 39. Jump to last edit: <backtick>.
 40. Close the popup menu: <C-e>
 41. Collapse all in neo tree: z
-42. Delete/yank/select inside object: diw di{ dip yiw yi{ yip viw vi{ vip
-43. Delete/yank/select around object: daw da{ dap yaw ya{ yap vaw va{ vap
+42. Delete/yank/select/change inside next (e.g. inside the next { ) object: diw di{ dip yiw yi{ yip viw vi{ vip ciw ci{ cip
+43. Delete/yank/select/change around next (e.g. inside the next { ) object: daw da{ dap yaw ya{ yap vaw va{ vap caw ca{ cap
 44. Delete/yank/select to end of file: dG yG vG
 45. Enter visual line mode: V 
 46. Set text width: :set textwidth=100
@@ -66,3 +66,8 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 51. View current model (this will start a new chat, the model will be shown in the to LH corner): GpChatNew
 52. Show available models (update the config to disable them): :lua print(vim.inspect(require("gp").agents))
 53. Get list of previous commands (useful for example copying to clipboard): q:
+54. Jump to next end of word: e
+55. Jump to previous beginning of word: b
+55. Jump to next start of word: w
+56. Jump to next/previous paragraph: }{
+57. View implementations: gi

@@ -36,3 +36,5 @@ end
 map('n', '<C-Right>', ':lua Resize_neotree(1)<CR>', { noremap = true, silent = true })
 -- Mapping to decrease window width
 map('n', '<C-Left>', ':lua Resize_neotree(-1)<CR>', { noremap = true, silent = true })
+
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
