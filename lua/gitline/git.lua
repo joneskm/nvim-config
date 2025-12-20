@@ -45,8 +45,8 @@ end
 
 M.get_github_permalink = function()
   -- Get current file and line number
-  local file_path = vim.fn.expand("%") -- Relative path from repo root
-  local line = vim.fn.line(".")        -- Current line number
+  local file_path = vim.fn.expand("%:p") -- Absolute path to file
+  local line = vim.fn.line(".")          -- Current line number
 
   -- Get Git remote URL
   local remote_url = vim.fn.systemlist("git config --get remote.origin.url")[1]
@@ -58,6 +58,16 @@ M.get_github_permalink = function()
   -- Convert SSH or HTTPS remote URL to GitHub web URL
   remote_url = remote_url:gsub("%.git$", "")                             -- Remove .git extension
   remote_url = remote_url:gsub("git@github.com:", "https://github.com/") -- Convert SSH to HTTPS
+
+  -- Get repo root and convert absolute path to repo-relative path
+  local repo_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  if not repo_root or repo_root == "" then
+    print("Error: Unable to determine Git repository root.")
+    return
+  end
+  repo_root = repo_root:gsub("/$", "")
+  local escaped_root = vim.pesc(repo_root .. "/")
+  file_path = file_path:gsub("^" .. escaped_root, "")
 
   -- Get the current branch or commit hash
   local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
