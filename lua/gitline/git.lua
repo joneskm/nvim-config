@@ -43,6 +43,21 @@ M.get_blame = function(filename, line)
   return nil, nil
 end
 
+M.get_commit_message = function(filename, line)
+  local commit_hash = M.get_blame(filename, line)
+  if not commit_hash then
+    return nil, nil
+  end
+
+  local cmd = string.format("git show -s --format=%%B %s", commit_hash)
+  local commit_message = M.run_cmd(cmd)
+  if commit_message and commit_message ~= "" then
+    return commit_hash, commit_message
+  end
+
+  return nil, nil
+end
+
 M.get_github_permalink = function()
   -- Get current file and line number
   local file_path = vim.fn.expand("%:p") -- Absolute path to file

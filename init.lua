@@ -143,6 +143,9 @@ vim.api.nvim_create_user_command("CopyFilePath", function()
 end, {})
 
 vim.keymap.set("n", "<leader>cp", "<cmd>CopyFilePath<CR>", { desc = "Copy file path to clipboard" })
+vim.keymap.set("n", "gK", function()
+  require("gitline").show_commit_message()
+end, { desc = "Show git commit message" })
 
 -- Open beancount files unfolded
 vim.api.nvim_create_autocmd("FileType", {

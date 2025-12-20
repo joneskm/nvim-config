@@ -72,3 +72,4 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 56. Jump to next/previous paragraph: }{
 57. View implementations: gi
 58. Scroll down/up half a screen: <C-d> / <C-u>
+59. Show git commit message in a floating preview: gK

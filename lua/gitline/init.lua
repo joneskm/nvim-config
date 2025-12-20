@@ -60,6 +60,31 @@ M.get_github_permalink = function()
   git.get_github_permalink()
 end
 
+M.show_commit_message = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local filename = vim.api.nvim_buf_get_name(bufnr)
+  if filename == "" then
+    print("No file for commit message.")
+    return
+  end
+
+  local line = vim.api.nvim_win_get_cursor(0)[1]
+  local commit_hash, commit_message = git.get_commit_message(filename, line)
+  if not commit_hash or not commit_message then
+    print("No commit message found for this line.")
+    return
+  end
+
+  local lines = vim.split(commit_message, "\n", { plain = true })
+  while #lines > 0 and lines[#lines] == "" do
+    table.remove(lines)
+  end
+  table.insert(lines, 1, "")
+  table.insert(lines, 1, "commit " .. commit_hash)
+
+  vim.lsp.util.open_floating_preview(lines, "markdown", { border = "single" })
+end
+
 -- Auto-update when moving the cursor
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
   callback = function()
