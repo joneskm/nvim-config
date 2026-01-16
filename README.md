@@ -6,7 +6,16 @@
 
 # Credits
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+1. Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+
+# Formatters
+
+These are required for Conform to format files:
+
+- `stylua` (Lua)
+- `rustfmt` (Rust)
+- `prettier` (Markdown and other supported filetypes)
+- `taplo-cli` (TOML)
 
 # Cheatsheet
 
@@ -31,22 +40,22 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 16. Rename/delete/add a file or directory: r d a (add a trailing slash to create a directory e.g. src/)
 17. Move to start/end of document: gg G
 18. Word search (this will interpret word as a regex): /word
-19. Word search literal: /\Vword 
-20. Search for word under the cursor: *
+19. Word search literal: /\Vword
+20. Search for word under the cursor: \*
 21. Next previous word: n N
 22. Ignore/No ignore case: set:ignorecase set:noignorecase
 23. Centre/top/bottom the cursor on the screen: zz zt zb
 24. Get github permalink: :GitHubLink
 25. Move cursor to the top/bottom: H L
 26. Open a file for editing: :e filename
-27. Expand/shrink file explorer: <C-Right <C-Left>> 
+27. Expand/shrink file explorer: <C-Right <C-Left>>
 28. Copy full path of the current buffer to the system clipboard: <leader> cp
 29. Find and replace all matches on the current line: :s/foo/bar/g
 30. Find and replace all matches in the file: :%s/foo/bar/g
 31. Find and replace all matches in the file with confirmation: :%s/foo/bar/gc
 32. Jump to line x: :x
 33. Go to the next/previous diagnostic: ]d [d
-34. Hover (e.g. show documentation): K 
+34. Hover (e.g. show documentation): K
 35. Jump to last insert exit: <leader> i
 36. Rename a symbol: <leader> rn
 37. Set a mark named g: mg
@@ -57,7 +66,7 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 42. Delete/yank/select/change inside next (e.g. inside the next { ) object: diw di{ dip yiw yi{ yip viw vi{ vip ciw ci{ cip
 43. Delete/yank/select/change around next (e.g. inside the next { ) object: daw da{ dap yaw ya{ yap vaw va{ vap caw ca{ cap
 44. Delete/yank/select to end of file: dG yG vG
-45. Enter visual line mode: V 
+45. Enter visual line mode: V
 46. Set text width: :set textwidth=100
 47. Reflow/format around paragraph/inside/end of file/end of paragraph: gqap gqip gqG gq}
 48. Reflow selection: gq
@@ -68,8 +77,8 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 53. Get list of previous commands (useful for example copying to clipboard): q:
 54. Jump to next end of word: e
 55. Jump to previous beginning of word: b
-55. Jump to next start of word: w
-56. Jump to next/previous paragraph: }{
-57. View implementations: gi
-58. Scroll down/up half a screen: <C-d> / <C-u>
-59. Show git commit message in a floating preview: gK
+56. Jump to next start of word: w
+57. Jump to next/previous paragraph: }{
+58. View implementations: gi
+59. Scroll down/up half a screen: <C-d> / <C-u>
+60. Show git commit message in a floating preview: gK
