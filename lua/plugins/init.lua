@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    lazy = false,
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
@@ -22,7 +23,8 @@ return {
         "gowork",
         "gotmpl",
         "vim", "lua", "vimdoc",
-        "html", "markdown", "rust", "css"
+        "html", "markdown", "rust", "css",
+        "javascript", "json"
       },
       highlight = { enable = true
       }
