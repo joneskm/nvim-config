@@ -3,6 +3,7 @@ local options = {
     lua = { "stylua" },
     rust = { "rustfmt" },
     markdown = { "prettier", "injected" },
+    toml = { "taplo" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },

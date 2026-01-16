@@ -23,8 +23,8 @@ return {
         "gowork",
         "gotmpl",
         "vim", "lua", "vimdoc",
-        "html", "markdown", "rust", "css",
-        "javascript", "json"
+        "html", "markdown", "markdown_inline", "rust", "css",
+        "javascript", "json", "toml"
       },
       highlight = { enable = true
       }
