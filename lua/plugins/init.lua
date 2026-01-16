@@ -22,18 +22,26 @@ return {
         "gomod",
         "gowork",
         "gotmpl",
-        "vim", "lua", "vimdoc",
-        "html", "markdown", "markdown_inline", "rust", "css",
-        "javascript", "json", "toml"
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "markdown",
+        "markdown_inline",
+        "rust",
+        "css",
+        "javascript",
+        "json",
+        "toml",
+        "bash",
       },
-      highlight = { enable = true
-      }
+      highlight = { enable = true },
     },
   },
 
   {
-    'mrcjkb/rustaceanvim',
-    version = '^5', -- Recommended
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
     lazy = false,   -- This plugin is already lazy
   },
 
@@ -41,13 +49,13 @@ return {
     "rmagatti/auto-session",
     lazy = false,
     config = function()
-      require("configs.auto_session")
+      require "configs.auto_session"
     end,
   },
 
   {
     "nathangrigg/vim-beancount",
-    ft = "beancount"
+    ft = "beancount",
   },
 
   {
@@ -56,7 +64,7 @@ return {
     config = function()
       local conf = {
         -- For customization, refer to Install > Configuration in the Documentation/Readme
-        openai_api_key = { "cat", vim.fn.expand("~/.config/openai_key") },
+        openai_api_key = { "cat", vim.fn.expand "~/.config/openai_key" },
         agents = {
           {
             name = "ChatGPT-o3-mini",
@@ -65,13 +73,12 @@ return {
           {
             name = "CodeGPT-o3-mini",
             disable = true,
-          }
+          },
         },
       }
       require("gp").setup(conf)
 
       -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
     end,
-  }
-
+  },
 }

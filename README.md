@@ -16,6 +16,7 @@ These are required for Conform to format files:
 - `rustfmt` (Rust)
 - `prettier` (Markdown and other supported filetypes)
 - `taplo-cli` (TOML)
+- `shfmt` (Shell: sh/bash/zsh)
 
 # Cheatsheet
 
