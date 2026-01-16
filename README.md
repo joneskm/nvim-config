@@ -45,7 +45,7 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 30. Find and replace all matches in the file: :%s/foo/bar/g
 31. Find and replace all matches in the file with confirmation: :%s/foo/bar/gc
 32. Jump to line x: :x
-33. Go the next/previous diagnsotic: ]d [d
+33. Go to the next/previous diagnostic: ]d [d
 34. Hover (e.g. show documentation): K 
 35. Jump to last insert exit: <leader> i
 36. Rename a symbol: <leader> rn
