@@ -83,3 +83,4 @@ NOTE: some of these don't work now that the config sets `vim.opt.scrolloff = 999
 58. View implementations: gi
 59. Scroll down/up half a screen: <C-d> / <C-u>
 60. Show git commit message in a floating preview: gK
+61. Write without applying autoformat: :noa w
