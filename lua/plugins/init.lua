@@ -34,6 +34,7 @@ return {
         "json",
         "toml",
         "bash",
+        "asm",
       },
       highlight = { enable = true },
     },

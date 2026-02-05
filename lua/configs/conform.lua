@@ -7,8 +7,17 @@ local options = {
     sh = { "shfmt" },
     bash = { "shfmt" },
     zsh = { "shfmt" },
+    asm = { "nasmfmt" },
     -- css = { "prettier" },
     -- html = { "prettier" },
+  },
+
+  formatters = {
+    nasmfmt = {
+      command = "nasmfmt",
+      args = { "$FILENAME" },
+      stdin = false,
+    },
   },
 
   format_on_save = function(bufnr)
